@@ -1,6 +1,6 @@
 # Meetily Privacy Policy
 
-*Last updated: [Current Date]*
+*Last updated: July 21, 2026*
 
 ## Our Privacy-First Commitment
 
@@ -65,10 +65,16 @@ When enabled, analytics helps us with:
 ## Third-Party Services
 
 ### LLM Providers (Optional)
-If you choose to use external LLM providers:
+If you choose to use external LLM providers, your meeting transcripts and
+summary prompts are sent to that provider for processing. The app asks for
+your explicit confirmation the first time you select each cloud provider:
 - **Anthropic Claude**: Subject to Anthropic's privacy policy
+- **OpenAI**: Subject to OpenAI's privacy policy
+- **Google Gemini**: Subject to Google's privacy policy
 - **Groq**: Subject to Groq's privacy policy
-- **Local Ollama**: Processed entirely on your device
+- **OpenRouter**: Subject to OpenRouter's privacy policy
+- **Custom OpenAI-compatible server**: Subject to the policies of whoever operates that server
+- **Built-in AI / Local Ollama**: Processed entirely on your device; nothing is transmitted
 
 ### Analytics Service (Optional)
 - **PostHog**: Used for usage analytics when enabled
@@ -91,9 +97,16 @@ If you choose to use external LLM providers:
 ## Data Security
 
 ### Local Security
-- Data encrypted at rest using your device's security features
-- No transmission of sensitive meeting data
-- Standard file system permissions protect your data
+- Meeting data (audio recordings, transcripts, summaries) is stored on your
+  device in your user profile, protected by standard file system permissions
+- The app does not add its own encryption layer on top; at-rest protection
+  relies on your operating system's disk encryption (FileVault on macOS,
+  BitLocker on Windows, LUKS on Linux) — we recommend keeping it enabled
+- Meeting content is never transmitted unless you configure a cloud LLM
+  provider, in which case transcripts are sent to that provider only after
+  your explicit confirmation
+- Provider API keys are stored in your operating system's credential store
+  (Keychain / Credential Manager / Secret Service), not in the app database
 
 ### Open Source Transparency
 - Full source code available for security review
@@ -107,12 +120,22 @@ We will notify users of any material changes to this privacy policy through:
 - Release notes for application updates
 - In-app notifications for significant privacy changes
 
+## Recording Consent
+
+Meetily records meetings **at your direction** — you are the data controller of your
+recordings. Recording-consent laws vary by jurisdiction (several U.S. states require
+the consent of all participants, and Mexico penalizes recording conversations you are
+not part of). Always inform participants that a meeting is being recorded and obtain
+their consent. See the **Legal Notice** in the app's About screen and in the README
+for details. Meetily's output is not an official or legal record.
+
 ## Contact Us
 
-For privacy-related questions or concerns:
-- **GitHub Issues**: [Create an issue](https://github.com/Zackriya-Solutions/meeting-minutes/issues)
-- **Email**: [Contact form](https://www.zackriya.com/service-interest-form/)
-- **Community**: [Discord](https://discord.gg/crRymMQBFH)
+For privacy-related questions or concerns about this distribution of Meetily:
+- **GitHub Issues**: [Create an issue](https://github.com/alvaromunozmx/meetily/issues)
+
+Meetily is a fork of the open-source [meeting-minutes](https://github.com/Zackriya-Solutions/meeting-minutes)
+project by Zackriya Solutions; for questions about the upstream project, see their repository.
 
 ## Open Source Commitment
 

@@ -20,6 +20,31 @@ Meetily is built on the principle that your meeting data should remain private a
 - No vendor lock-in - export your data anytime
 - Complete control over data retention and deletion
 
+### Voice Profiles (Optional, Beta)
+Voice profiles let Meetily recognize a person you named in an earlier meeting and
+suggest their name ("Sounds like Ana Ruiz?"). They are off by default and turned
+on only through an explicit consent dialog.
+- **What is stored**: a voiceprint — a list of numbers describing a voice, not a
+  recording — for each person you choose to save, plus one per detected speaker of
+  each meeting you run speaker identification on. Voiceprints are biometric data,
+  mostly about the people you meet with.
+- **When**: only with voice profiles turned on, and Meetily asks every time before
+  saving or extending a person's profile. Suggestions are never used as a name
+  until you confirm them — unless you turn on "Use strong voice matches
+  automatically" (off by default): then a voice that clearly matches a saved
+  profile is named and added to that profile without asking, marked "Matched by
+  voice" so you can undo it.
+- **Where**: only in the local database on your computer. Voiceprints are never
+  uploaded, never sent to an AI provider, not included in exports, not readable
+  through the MCP server, and not part of analytics.
+- **Deleting**: delete one profile or all of them in Settings → Voice profiles, or
+  when turning the feature off. "Delete all" also erases the per-meeting
+  voiceprints and cleans the database backups Meetily keeps before updates. When
+  deleting a meeting you choose whether the voice samples it contributed go too.
+  Uninstalling the app does not remove its data folder
+  (`~/Library/Application Support/com.meetily.ai` on macOS); delete it to remove
+  everything.
+
 ## Usage Analytics
 
 ### What We Collect

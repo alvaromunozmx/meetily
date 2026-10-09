@@ -1,6 +1,6 @@
 # Meetily Privacy Policy
 
-*Last updated: July 21, 2026*
+*Last updated: October 9, 2026*
 
 ## Our Privacy-First Commitment
 
@@ -20,7 +20,7 @@ Meetily is built on the principle that your meeting data should remain private a
 - No vendor lock-in - export your data anytime
 - Complete control over data retention and deletion
 
-### Vocabulary (Beta)
+### Vocabulary
 The vocabulary is a list of names and terms you want transcribed right (and how
 they are misheard). It stays on your computer: it is given to the local Whisper
 model as context and used to correct transcripts locally. It is never sent to an
@@ -28,7 +28,7 @@ AI provider, not readable through the MCP server, and not part of analytics. Whe
 you fix a word in a transcript, Meetily keeps the previous text so you can undo
 the fix; it is deleted with the meeting.
 
-### Voice Profiles (Optional, Beta)
+### Voice Profiles (Optional)
 Voice profiles let Meetily recognize a person you named in an earlier meeting and
 suggest their name ("Sounds like Ana Ruiz?"). They are off by default and turned
 on only through an explicit consent dialog.
@@ -52,6 +52,24 @@ on only through an explicit consent dialog.
   Uninstalling the app does not remove its data folder
   (`~/Library/Application Support/com.meetily.ai` on macOS); delete it to remove
   everything.
+
+### Live Questions — "What did I miss?" (Optional, Beta)
+While you record, you can ask Meetily to catch you up on the last minutes or answer
+a question about what has been said. It is off until you turn it on.
+- **What is sent, and when**: only when you click (or type a question), the part of
+  the live transcript the question is about — which includes what the other people
+  in the meeting said — and your question go to the model Meetily uses for this: your
+  summary model, or, with Coaching on, the coaching model if you set one. With a cloud provider,
+  that provider receives them, under the same one-time confirmation as the other AI
+  features, and the panel says "sent to {provider}". With the built-in model or a
+  local Ollama, nothing leaves your computer. Nothing is sent in the background.
+- **What is kept**: answers live in memory for the recording in progress and are
+  discarded when it stops — unless you press **Keep** on an answer, which saves it in
+  the meeting's AI chat, deleted with the meeting. They are not readable through the
+  MCP server and not part of analytics (which records only that the feature was
+  used, never the text).
+- **On screen**: the panel in the main window is visible if you share your screen;
+  the one in the coach's floating window is excluded from screen sharing.
 
 ## Usage Analytics
 
@@ -99,7 +117,8 @@ When enabled, analytics helps us with:
 
 ### LLM Providers (Optional)
 If you choose to use external LLM providers, your meeting transcripts and
-summary prompts are sent to that provider for processing. The app asks for
+summary prompts — and, when you use live questions, the part of the live
+transcript you ask about — are sent to that provider for processing. The app asks for
 your explicit confirmation the first time you select each cloud provider:
 - **Anthropic Claude**: Subject to Anthropic's privacy policy
 - **OpenAI**: Subject to OpenAI's privacy policy

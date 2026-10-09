@@ -20,6 +20,14 @@ Meetily is built on the principle that your meeting data should remain private a
 - No vendor lock-in - export your data anytime
 - Complete control over data retention and deletion
 
+### Vocabulary (Beta)
+The vocabulary is a list of names and terms you want transcribed right (and how
+they are misheard). It stays on your computer: it is given to the local Whisper
+model as context and used to correct transcripts locally. It is never sent to an
+AI provider, not readable through the MCP server, and not part of analytics. When
+you fix a word in a transcript, Meetily keeps the previous text so you can undo
+the fix; it is deleted with the meeting.
+
 ### Voice Profiles (Optional, Beta)
 Voice profiles let Meetily recognize a person you named in an earlier meeting and
 suggest their name ("Sounds like Ana Ruiz?"). They are off by default and turned

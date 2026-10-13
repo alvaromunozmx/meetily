@@ -1,6 +1,6 @@
 # Meetily Privacy Policy
 
-*Last updated: October 9, 2026*
+*Last updated: October 13, 2026*
 
 ## Our Privacy-First Commitment
 
@@ -23,8 +23,10 @@ Meetily is built on the principle that your meeting data should remain private a
 ### Vocabulary
 The vocabulary is a list of names and terms you want transcribed right (and how
 they are misheard). It stays on your computer: it is given to the local Whisper
-model as context and used to correct transcripts locally. It is never sent to an
-AI provider, not readable through the MCP server, and not part of analytics. When
+model as context and used to correct transcripts locally. It is not sent to an
+AI provider — except, if you turn on the AI clean-up described below with a cloud
+model, the terms that appear in that meeting's transcript. It is not readable
+through the MCP server and not part of analytics. When
 you fix a word in a transcript, Meetily keeps the previous text so you can undo
 the fix; it is deleted with the meeting.
 
@@ -70,6 +72,21 @@ a question about what has been said. It is off until you turn it on.
   used, never the text).
 - **On screen**: the panel in the main window is visible if you share your screen;
   the one in the coach's floating window is excluded from screen sharing.
+
+### Improve Transcript After Recording (Optional, Beta)
+After you stop a recording, Meetily can improve its transcript. It is off until you
+turn it on.
+- **Re-transcribe**: the saved audio is transcribed again with a model you choose.
+  This happens entirely on your computer.
+- **Clean up with AI**: the transcript is sent to your summary model to fix misheard
+  words and punctuation, together with the vocabulary terms and participant names
+  that appear in that meeting (no others). With a cloud provider, that provider
+  receives them, once per meeting, under the same confirmation as summaries; with
+  the built-in model or a local Ollama, nothing leaves your computer.
+- **What is kept**: the transcript as it was before, and what the AI changed, so you
+  can restore or undo them. Both are deleted with the meeting, are not readable
+  through the MCP server, and are not part of analytics (which records only counts,
+  never text).
 
 ## Usage Analytics
 
@@ -151,6 +168,10 @@ your explicit confirmation the first time you select each cloud provider:
 ### Local Security
 - Meeting data (audio recordings, transcripts, summaries) is stored on your
   device in your user profile, protected by standard file system permissions
+- Each recording is saved as the mixed audio you can play back, plus a copy of
+  each side of the call (your microphone and the system audio) that Meetily uses
+  to tell who said what when it re-transcribes the meeting. All three files stay
+  in the meeting's folder and are deleted with the meeting
 - The app does not add its own encryption layer on top; at-rest protection
   relies on your operating system's disk encryption (FileVault on macOS,
   BitLocker on Windows, LUKS on Linux) — we recommend keeping it enabled
